@@ -1,0 +1,67 @@
+Ridins-MacBook-Pro:ReactWeather RidinBhanz$ git status
+On branch master
+nothing to commit, working directory clean
+Ridins-MacBook-Pro:ReactWeather RidinBhanz$ cd /Users/RidinBhanz/Desktop/Git-Projects
+Ridins-MacBook-Pro:Git-Projects RidinBhanz$ ls -al ~/.ssh
+ls: /Users/RidinBhanz/.ssh: No such file or directory
+Ridins-MacBook-Pro:Git-Projects RidinBhanz$ cd..
+-bash: cd..: command not found
+Ridins-MacBook-Pro:Git-Projects RidinBhanz$ cd...
+-bash: cd...: command not found
+Ridins-MacBook-Pro:Git-Projects RidinBhanz$ cd
+Ridins-MacBook-Pro:~ RidinBhanz$ cd
+Ridins-MacBook-Pro:~ RidinBhanz$ cd
+Ridins-MacBook-Pro:~ RidinBhanz$ ls -al ~/.ssh
+ls: /Users/RidinBhanz/.ssh: No such file or directory
+Ridins-MacBook-Pro:~ RidinBhanz$ ls -al ~/.ssh
+ls: /Users/RidinBhanz/.ssh: No such file or directory
+Ridins-MacBook-Pro:~ RidinBhanz$ ssh-keygen -t rsa -b 4096 -C 'rdudayan2@gmail.com'
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/RidinBhanz/.ssh/id_rsa):
+Created directory '/Users/RidinBhanz/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /Users/RidinBhanz/.ssh/id_rsa.
+Your public key has been saved in /Users/RidinBhanz/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:QhEgKQJKinl2sOcPiQoBaKMlr4lKdu4+AKoFxRaiG6g rdudayan2@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+|*o+o..o.         |
+|&=*+   .         |
+|&B= o .          |
+|=*.= o           |
+|E+. + . S        |
+|*=.. o .         |
+|*.+   .          |
+|o  o             |
+|  oo.            |
++----[SHA256]-----+
+Ridins-MacBook-Pro:~ RidinBhanz$ eval "$(ssh-agent-s)"
+-bash: ssh-agent-s: command not found
+Ridins-MacBook-Pro:~ RidinBhanz$ eval "$(ssh-agent -s)"
+Agent pid 8122
+Ridins-MacBook-Pro:~ RidinBhanz$ ls -al ~/.ssh
+total 16
+drwx------   4 RidinBhanz  staff   136 14 Dec 16:31 .
+drwxr-xr-x+ 34 RidinBhanz  staff  1156 14 Dec 16:31 ..
+-rw-------   1 RidinBhanz  staff  3243 14 Dec 16:31 id_rsa
+-rw-r--r--   1 RidinBhanz  staff   745 14 Dec 16:31 id_rsa.pub
+Ridins-MacBook-Pro:~ RidinBhanz$ ssh-add ~/.ssh/id_rsa
+Identity added: /Users/RidinBhanz/.ssh/id_rsa (/Users/RidinBhanz/.ssh/id_rsa)
+Ridins-MacBook-Pro:~ RidinBhanz$ more ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDAqvqLd5G+5hRfQrHP471AFpvjPPlwa0GhSLKDZLEecoZtsUONZ/HXJ3TZS6CQgujmVTWhGqNH9AdDdG7XzlPdz9TModsZIW06D8WaA7WMt7ScpYyqNbp9oshuAAYlqTdJrCJ1kedWkhxVXz1WJxatBtt/6QolD4Z2ffqsYxAtLpLC7wF3WXUMJs6Jg4gD/avNDmQFK3/J2cXKQT6Tu7GLfte52XLWe5dhQ0IsJKbxeRCT4WSdZkBOkqabtKGHUqJCYkAzGRSGMy8EBbER6CWekx26Nh8Ghi7b0IS8n5kuXaepcsXj5QAyideZUs7O6uXJe/lxwDYUgUtUaoiIjSZqLlnvplCUwXYL0NMK/cDRznX1Pb8QEjt6W2dL9j4E2NRgo8gKTbe2e99K/25QcFg/3MKCBlFlMVBKgFwWrgD1UGi4DlJ9wJOTiNE/R9Nf3j0IM5r46YEU+50HqUKpjguil0gFTxDxTzruCRqITo7aOYGYyxraiFG6rFLehQwzlSKzVyUVu749XMwfRR9Egp76/7lk+C7wfWt+EbYfF/BqoPsng/a8XsVsuJxye4tW5EJk+/chUoJ3psHBIs0/YNa49MNotvphviFiwV6czzwKCG7WVub3jzC11t1orpGzaXuivdJWEznS9VIU8FMRHCyQCBGMXBNOWgXO916GDfvPUw== rdudayan2@gmail.com
+
+
+//Copy paste the above key into the key field in GitHub New key process.
+
+Ridins-MacBook-Pro:~ RidinBhanz$ ssh T -git@github.com
+Warning: Identity file t@github.com not accessible: No such file or directory.
+ssh: Could not resolve hostname t: nodename nor servname provided, or not known
+Ridins-MacBook-Pro:~ RidinBhanz$ ssh -T git@github.com
+The authenticity of host 'github.com (192.30.253.112)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,192.30.253.112' (RSA) to the list of known hosts.
+Hi rdbhanz! You've successfully authenticated, but GitHub does not provide shell access.
+Ridins-MacBook-Pro:~ RidinBhanz$
